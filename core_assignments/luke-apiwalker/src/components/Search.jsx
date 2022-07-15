@@ -23,6 +23,7 @@ const Search = (props) => {
     }
 
     return ( 
+        // ----->main form to take information----//
         <form onSubmit={getElement}>
             <div className="row my-3 justify-content-center">
                 <label className="mx-2">Search for:</label>
