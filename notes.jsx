@@ -76,7 +76,9 @@ module.exports = function (app) {
 npx create - react - app client
 cd client
 
-npm install axios
+npm install axios //make api calls//
+npm install react-router-dom
+
 npm install @reach/router
 
 cd src
