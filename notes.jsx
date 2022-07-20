@@ -14,7 +14,52 @@ npm install express mongoose cors
 
 copy nul server.js
 
+// front end setup
+
+npx create - react - app client
+cd client
+
+npm install axios //make api calls//
+npm install react-router-dom
+
+npm install @reach/router
+  
+cd src
+mkdir Components
+mkdir Views
 // * Template - server.js *
+
+
+// MERN setup guide 
+// 1. Create a folder for your project: beltreviewer 
+// 2. cd beltReviewer (go into the project)
+// 3. Initialize a javascript package for the project using: npm init -y 
+// 4. Install dependencies: npm install express cors mongoose 
+// 5. Create a server.js file in the project folder 
+// 6. Create a server folder in the project folder 
+// 7. Make 4 directories in the server folder: config, models, controllers, routes 
+// 8. Make a mongoose.config.js file in the config folder 
+// 9. Set up the config.js file as usual—>make sure you change name of db to something unique that you havent used yet 
+// 10. Set up server.js as usual (remember to require the mongoose config, don’t require the routes yet b/c they have not been created yet) - also remember the app.use() commands for post data!
+// 11. CHECKPOINT-Test it using nodemon server.js (running the server) to make sure it says established connection with db 
+// 12. Create a model file as usual in the models folder. Set up model according to wireframe and project requirements. 
+// 13. Create a controller file in the controllers folder, and set up the controllers to work with your models that you imported- Controller file needs the import to connect with the model. Have the crud functions in the controllers
+// 14. Create a routes file in the routes folder and set up routes. Import the controllers in the routes file. Make sure the methods in the controllers are referenced in the routes 
+// 15. In server.js, import (require) the routes and pass the app object to it (make sure this is the second to last line in server.js- basically the require routes part is underneath the app.use parts)
+// 16. CHECKPOINT- test all routes using postman before building the front end
+// 17. Enable CORS-> in server.js import it and then insert the app.use(cors()) command
+// 18. Create a react app inside the project folder-> name it “client”
+// 19. Install dependencies for react-> cd into client folder and run “npm install axios react-router-dom” 
+// 20. Build out the front end!
+
+
+
+
+
+
+
+
+
 
 
 const express = require('express');
@@ -72,18 +117,6 @@ module.exports = function (app) {
   nodemon server.js
 
 // # Set Up Front-End
-
-npx create - react - app client
-cd client
-
-npm install axios //make api calls//
-npm install react-router-dom
-
-npm install @reach/router
-
-cd src
-mkdir Components
-mkdir Views
 
 
 // * Template - Component *
@@ -191,146 +224,6 @@ module.exports.createPerson = (req, res) => {
 
 
 
-
-// starting a new project "npx create-react-app-"folder name"
-// run react "npm start"
-
-// basic functional component setup
-import React from "react";
-
-const form = () => { }
-
-export default form;
-
-// in the folder you want to open in visualstudio 
-cmd code.
-
-  // use the command prompt to start projects
-  cd "my-app-name"
-npm start
-
-npm init
-
-npm i < package name >
-
-  //insert in app.js
-  npm install react - bootstrap bootstrap
-import "bootstrap/dist/css/bootstrap.min.css"; //insert in app.js
-
-import Button from 'react-bootstrap/Button';
-// or less ideally
-import { Button } from 'react-bootstrap';
-
-
-// ------> In App.js <--------//
-
-import React from "react";
-import {
-  Routes,
-  Route,
-  Link
-} from "react-router-dom";
-
-const Home = (props) => {
-  return (
-    <div>
-      <h1 style={{ color: "red" }}>Home Component</h1>
-      <Link to={"/about"}>Go to About </Link>
-    </div>
-  );
-}
-
-const About = (props) => {
-  return (
-    <div>
-      <h1 style={{ color: "blue" }}>About Component</h1>
-      <Link to={"/"}>Go Home</Link>
-    </div>
-  );
-}
-
-function App() {
-  return (
-    <div>
-      <h1>Routing Example</h1>
-      <Routes>
-        <Route path="/about" element={<About />} />
-        <Route exact path="/" element={<Home />} />
-      </Routes>
-    </div>
-  );
-}
-
-export default App
-
-
-// // ----------> URL Params <-----------// //
-
-import React from "react";
-import { useParams } from "react-router";
-import {
-  Link,
-  Routes,
-  Route
-} from "react-router-dom";
-
-const Location = (props) => {
-  const { city } = useParams();
-  return (
-    <h1>Welcome to {city}! </h1>
-  );
-}
-
-function App() {
-  return (
-    <div>
-      <p>
-        <Link to="/location/seattle">Seattle</Link>
-        |
-        <Link to="/location/chicago">Chicago</Link>
-        |
-        <Link to="/location/burbank">Burbank</Link>
-      </p>
-      <Routes>
-        <Route path="/location/:city" element={<Location />} />
-      </Routes>
-    </div>
-  );
-}
-
-export default App;
-
-
-// -------> using "useNavigate" <--------//
-
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-
-function App() {
-
-  const Survey = (props) => {
-    const [name, setName] = useState("");
-    const [comment, setComment] = useState("");
-    const navigate = useNavigate();
-
-    const sendSurvey = (e) => {
-      e.preventDefault();
-      // When the user clicks the submit input in the form, 
-      //we will navigate to the "/results" path
-      navigate("/results");
-    }
-
-    return (
-      <form onSubmit={sendSurvey}>
-        <label>Your Name:</label>
-        <input type="text" onChange={(e) => setName(e.target.value)} value={name} />
-        <label>Your Comment:</label>
-        <textarea onChange={(e) => setComment(e.target.value)} value={comment}></textarea>
-        <input type="submit" value="Submit Survey" />
-      </form>
-    );
-  }
-}
 
 
 
