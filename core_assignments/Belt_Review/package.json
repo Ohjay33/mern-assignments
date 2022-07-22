@@ -10,8 +10,10 @@
   "author": "Ohjay <Ohjaymoore@gmail.com> (http://www.yourhomepage.com/)",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.27.2",
     "cors": "^2.8.5",
     "express": "^4.18.1",
-    "mongoose": "^6.4.5"
+    "mongoose": "^6.4.5",
+    "react-router-dom": "^6.3.0"
   }
 }
