@@ -13,7 +13,7 @@ app.use(cors());
 require("./server/config/mongoose.config");
 
 
-// require("./server/routes/ninja.routes")(app);
+require("./server/routes/product.routes")(app);
 
 
 

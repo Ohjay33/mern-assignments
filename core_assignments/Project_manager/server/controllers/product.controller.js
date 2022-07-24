@@ -2,7 +2,7 @@ const Product = require("../models/product.model");
 
 
 module.exports.findAllProducts = (req,res)=>{
-    Ninja.find()
+    Product.find()
         .then(allProducts =>{
             res.json({results: allProducts})
         })
@@ -32,7 +32,7 @@ module.exports.findOneProduct = (req,res)=>{
 }
  
 module.exports.updateOneProduct = (req,res)=>{
-    Ninja.findOneAndUpdate(
+    Product.findOneAndUpdate(
         {_id: req.params.id},
         req.body,
         { new: true, runValidators: true }
@@ -45,7 +45,7 @@ module.exports.updateOneProduct = (req,res)=>{
         })
 }
 module.exports.deleteProduct = (req,res)=>{
-    Ninja.deleteOne({_id: req.params.id})
+    Product.deleteOne({_id: req.params.id})
         .then(product =>{
             res.json({results: product})
         })

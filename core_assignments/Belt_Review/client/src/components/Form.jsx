@@ -41,7 +41,7 @@ const Form = (props) => {
 
     return (
         <div>
-            <h3>Submit this form to make a ninja</h3>
+            <h3>Submit this form to make a Ninja</h3>
             <form onSubmit={submitHandler}>
                 <div className="form-group">
                     <label htmlFor="">Name:</label>
@@ -60,7 +60,7 @@ const Form = (props) => {
                     <input type="text" name="imgUrl"  className="form-control" onChange={changeHandler} />
                     <p className="text-danger">{formErrors.imgUrl?.message}</p>
                    
-                </div>
+                </div> 
                 <div className="form-group">
                     <label htmlFor="">Graduation Date:</label>
                     <input type="date" name="graduationDate" className="form-control" onChange={changeHandler} />
