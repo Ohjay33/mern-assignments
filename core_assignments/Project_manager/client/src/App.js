@@ -19,14 +19,13 @@ function App() {
   return (
     <div className="App container">
       <h1>Product Manager</h1>
-      <AllProducts></AllProducts>
-
-      {/* <Routes>
+   
+      <Routes>
         <Route exact path="/" element={
           <>
-            <Form formSubmitted={formSubmitted} setFormSubmitted={setFormSubmitted}></Form>
+            <Form ></Form>
             <hr></hr>
-            <AllProducts formSubmitted={formSubmitted}></AllProducts>
+            <AllProducts></AllProducts>
           </>
         }>
       </Route>
@@ -35,7 +34,7 @@ function App() {
       <Route exact path="/products/:id" element={<OneProduct/>}></Route>
 
       <Route exact path = "/products/edit/:id" element={<EditForm/>}></Route>
-      </Routes> */}
+      </Routes>
     </div>
   );
 }

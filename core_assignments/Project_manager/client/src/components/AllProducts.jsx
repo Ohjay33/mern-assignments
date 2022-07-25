@@ -1,23 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 // import moment from 'moment';
-// import {
+import {
 
-//     Link
-// } from "react-router-dom";
+    Link
+} from "react-router-dom";
 
 
 const AllProducts = () => {
 
     let [products, setProducts] = useState([])
-    // let [productDeleted, setProductDeleted] = useState(false)
+    let [productDeleted, setProductDeleted] = useState(false)
 
 
 
     useEffect(() => {
         axios.get("http://localhost:8000/api/products")
             .then(response => {
-                console.log("response", response);
+                // console.log("response", response);
                 setProducts(response.data.results);
 
             })
@@ -28,10 +28,11 @@ const AllProducts = () => {
         <div>
             <h3>All products Below here</h3>
             {
-                products.map((product, i) => {
+                products.map((product) => {
                     return (
-                        <div className='card m-3 p-3b'>
-                            <h2>{product.title}</h2>
+                        <div key={product._id} className='card m-3 p-3b'>
+
+                            <h2><Link to={`/products/${product._id}`}>{product.title}</Link></h2>
                             <p>Price of Product: {product.price}</p>
                             <p>Description of Product: {product.description}</p>
 
