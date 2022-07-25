@@ -35,6 +35,7 @@ const AllProducts = () => {
                             <h2><Link to={`/products/${product._id}`}>{product.title}</Link></h2>
                             <p>Price of Product: {product.price}</p>
                             <p>Description of Product: {product.description}</p>
+                            <Link to={`/products/edit/${product._id}`} className='btn btn-info mt-3'>Edit {product.name}</Link>
 
                         </div>
                     )

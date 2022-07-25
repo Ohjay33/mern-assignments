@@ -1,8 +1,81 @@
-// import React, {useState,useEffect} from 'react';
-// import { useParams } from "react-router";
-// import axios from 'axios';
-// import { useNavigate } from "react-router-dom";
-// // import moment from 'moment';
+import React, {useState,useEffect} from 'react';
+import { useParams } from "react-router";
+import axios from 'axios';
+import { useNavigate } from "react-router-dom";
+
+
+const EditForm = () => {
+    const {id} = useParams()
+    const [details,setDetails] = useState({})
+
+    useEffect(()=>{
+                axios.get(`http://localhost:8000/api/products/${id}`)
+                    .then(response=>{
+                        console.log(response)
+                        if(response.data.results){
+                            setDetails(response.data.results);
+                        }
+                        // console.log(details)
+                    })
+                    .catch(err=>console.log(err))
+            
+            }, [])
+        
+
+
+
+
+    return (
+        <div>
+             <h3>Submit to edit Product</h3>
+            <form>
+            <div className="form-group">
+              <label htmlFor="">Title:</label>
+              <input type="text" name="title"  className="form-control" value={details.title}  />
+             
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="">Price:</label>
+              <input type="text" name="price"  className="form-control"  value={details.price} />
+             
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="">Description:</label>
+              <input type="text" name="description"  className="form-control"  value={details.description} />
+             
+            </div>
+            <input type="submit" value="Create" className='btn btn-success m-3'  />
+
+        </form>
+        </div>
+    );
+};
+
+
+
+export default EditForm;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // const EditForm = () => {

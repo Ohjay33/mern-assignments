@@ -1,28 +1,3 @@
-// import React from 'react';
-
-
-// const OneProduct = () => {
-//     return (
-//         <div>
-//             <h3>Details about Product_Name_Goes_Here</h3>
-//         </div>
-//     );
-// };
-
-
-
-// export default OneProduct;
-
-
-
-
-
-
-
-
-
-
-
 import React, {useState,useEffect} from 'react';
 import axios from 'axios';
 import { useParams } from "react-router";
@@ -51,7 +26,7 @@ useEffect(()=>{
         })
         .catch(err=>console.log(err))
 
-}, [])
+}, [id])
 
 
 const deleteProduct = ()=>{
@@ -87,3 +62,19 @@ const deleteProduct = ()=>{
 
 
 export default OneProduct;
+
+
+// import React from 'react';
+
+
+// const OneProduct = () => {
+//     return (
+//         <div>
+//             <h3>Details about Product_Name_Goes_Here</h3>
+//         </div>
+//     );
+// };
+
+
+
+// export default OneProduct;
