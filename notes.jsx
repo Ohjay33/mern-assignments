@@ -51,6 +51,11 @@ mkdir Views
 // 18. Create a react app inside the project folder-> name it “client”
 // 19. Install dependencies for react-> cd into client folder and run “npm install axios react-router-dom” 
 // 20. Build out the front end!
+// 21. in client folder start react app --> npm start
+// 22. add bootstrap to client/public/index.hml
+// 23.modify app.js 
+// 24.create components folder in src
+// 
 
 
 
