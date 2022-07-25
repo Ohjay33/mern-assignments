@@ -14,7 +14,7 @@ import EditForm from './components/EditForm';
 
 
 function App() {
-// let [formSubmitted, setFormSubmitted] = useState(false);
+let [formSubmitted, setFormSubmitted] = useState(false);
 
   return (
     <div className="App container">
@@ -23,9 +23,9 @@ function App() {
       <Routes>
         <Route exact path="/" element={
           <>
-            <Form ></Form>
+            <Form formSubmitted={formSubmitted} setFormSubmitted={setFormSubmitted}></Form>
             <hr></hr>
-            <AllProducts></AllProducts>
+            <AllProducts formSubmitted={formSubmitted}></AllProducts>
           </>
         }>
       </Route>

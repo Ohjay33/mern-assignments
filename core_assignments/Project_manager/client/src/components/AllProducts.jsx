@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 
 
-const AllProducts = () => {
+const AllProducts = (props) => {
 
     let [products, setProducts] = useState([])
     let [productDeleted, setProductDeleted] = useState(false)
@@ -22,7 +22,18 @@ const AllProducts = () => {
 
             })
             .catch(err => console.log(err))
-    }, [])
+    }, [productDeleted, props.formSubmitted])
+
+
+    
+    const deleteProduct = (id) => {
+        axios.delete(`http://localhost:8000/api/products/${id}`)
+            .then(response => {
+                setProductDeleted(!productDeleted)
+            })
+            .catch(err => console.log(err))
+    }
+
 
     return (
         <div>
@@ -36,7 +47,7 @@ const AllProducts = () => {
                             <p>Price of Product: {product.price}</p>
                             <p>Description of Product: {product.description}</p>
                             <Link to={`/products/edit/${product._id}`} className='btn btn-info mt-3'>Edit {product.name}</Link>
-
+                            <button onClick={()=>deleteProduct(product._id)} className='btn btn-danger mt-3'>Delete{product.name}</button>
                         </div>
                     )
                 })
